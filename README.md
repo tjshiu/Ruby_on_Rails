@@ -12,7 +12,7 @@ The Rails router:
 The controller helps us makes sense of the request and produce the appropriate output. Controllers are the "doers" of the MVC. 
 
 * __ALWAYS__ named in the plural form. `ExamplesController`
-
+* `rails g controller Names` <- remember always plural and will create the controller.
 ``` Ruby
 # app/controllers/users_controller.rb
 class UsersController < ApplicationController
@@ -36,6 +36,12 @@ end
 __CRUD__ = "Create Read Update Destroy"
 
 ``` Ruby
+resources: :users only: [:index]
+# OR
+get "/users", to: "users#index", as: 'users
+```
+
+``` Ruby
 # config/routes.rb
 TestCLone::Application.routes.draw do 
     resources: :examples
@@ -45,6 +51,7 @@ end
 ## Getting Started
 * `rails new project_name`
 * `rails new project_name --database=postgresql` - If you want to use a different database. 
+* `rails routes` to see the routes that you created using `resources` in the `config/routes.rb`
 
 __Notes for using PostgreSQL__
 * set up using `bundle exec rails db:create`
