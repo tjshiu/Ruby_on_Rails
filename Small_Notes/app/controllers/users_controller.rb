@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def index
-        render plain "hello"
+        render plain: "hello"
     end
 
     def create
