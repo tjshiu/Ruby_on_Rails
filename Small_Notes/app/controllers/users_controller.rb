@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def index
-        render json: params
+        render plain "hello"
     end
 
     def create
